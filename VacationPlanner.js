@@ -2,14 +2,18 @@
 function init() {
     var nameInput = document.getElementById("greeting");
     var person = window.prompt("Please enter your name: ");
-    var errorElement = document.getElementById("error");
+    var timingError = document.getElementById("timingError");
     if (person != null) {
         nameInput.innerHTML += ", " + person;
     } 
     var enterButton = document.getElementById("enterDays");
     enterButton.addEventListener("click", clickEnter);
     var nextButton = document.getElementById("timingNext");
-    nextButton.addEventListener("click", clickNext);    
+    nextButton.addEventListener("click", clickNext);  
+    var enterBudget = document.getElementById("enterBudget");
+    enterBudget.addEventListener("click", clickBudget);
+    var budgetError = document.getElementById("budgetError");  
+    var exchangeRate = 0.86;
 }
 
 // Handlers
@@ -36,12 +40,24 @@ function clickEnter() {
         var timingNext = document.getElementById("timingNext");
         timingNext.removeAttribute("hidden");
     } else {
-        errorElement.innerHTML = "You have to input something";
+        timingError.innerHTML = "You have to input something";
     }
 }
 function clickNext() {
     var budgetPage = document.getElementById("budgetSection");
     budgetPage.removeAttribute("hidden");
+}
+function clickBudget() {
+    var tripBudget = document.getElementById("tripBudget").value;
+    if (tripBudget > 0) {
+        var exchangeMsg = document.getElementById("tripExchangeMsg");
+        var exchange = tripBudget * exchangeRate;
+        exchangeMsg.innerHTML = "That means you'll need " + exchange + " EUR for your trip."
+
+    }
+    else {
+        budgetError.innerHTML = "You have to input digits";
+    }
 }
 
 // Main section
