@@ -54,9 +54,17 @@ function clickBudget() {
         var exchangeMsg = document.getElementById("tripExchangeMsg");
         var exchange = tripBudget * exchangeRate;
         exchangeMsg.innerHTML = "That means you'll need " + exchange + " EUR for your trip."
+        var daysInput = document.getElementById("days").value;
         var dailyExchangeMsg = document.getElementById("dailyExchangeMsg");
         var dailyExchange = exchange / daysInput;
-        dailyExchange.innerHTML = "That means you can spend " + dailyExchange + "EUR per day."
+        dailyExchangeMsg.innerHTML = "That means you can spend " + dailyExchange + " EUR per day."
+        var exchange10Msg = document.getElementById("exchange10Msg");
+        var exchange10 = exchangeRate * 10;
+        exchange10Msg.innerHTML = "You'll need " + exchange10 + " EUR for an item that would cost you 10 USD."
+        var exchange500Msg = document.getElementById("exchange500Msg");
+        var exchange500 = exchangeRate * 500;
+        exchange500Msg.innerHTML = "You'll need " + exchange500 + " EUR for an item that would cost you 500 USD."
+
 
     }
     else {
