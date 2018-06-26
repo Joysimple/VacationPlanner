@@ -13,7 +13,7 @@ function init() {
     var enterBudget = document.getElementById("enterBudget");
     enterBudget.addEventListener("click", clickBudget);
     var budgetError = document.getElementById("budgetError");  
-    var exchangeRate = 0.86;
+    
 }
 
 // Handlers
@@ -49,10 +49,14 @@ function clickNext() {
 }
 function clickBudget() {
     var tripBudget = document.getElementById("tripBudget").value;
+    var exchangeRate = 0.86;
     if (tripBudget > 0) {
         var exchangeMsg = document.getElementById("tripExchangeMsg");
         var exchange = tripBudget * exchangeRate;
         exchangeMsg.innerHTML = "That means you'll need " + exchange + " EUR for your trip."
+        var dailyExchangeMsg = document.getElementById("dailyExchangeMsg");
+        var dailyExchange = exchange / daysInput;
+        dailyExchange.innerHTML = "That means you can spend " + dailyExchange + "EUR per day."
 
     }
     else {
