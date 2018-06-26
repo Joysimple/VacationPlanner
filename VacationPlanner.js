@@ -33,12 +33,15 @@ function clickEnter() {
         var secondsText = document.getElementById("secondsMessage");
         var seconds = minutes * 60;
         secondsText.innerHTML = "Which means you'll be traveling for " + seconds + " seconds!";
+        var timingNext = document.getElementById("timingNext");
+        timingNext.removeAttribute("hidden");
     } else {
         errorElement.innerHTML = "You have to input something";
     }
 }
 function clickNext() {
-    
+    var budgetPage = document.getElementById("budgetSection");
+    budgetPage.removeAttribute("hidden");
 }
 
 // Main section
