@@ -69,7 +69,7 @@ function clickBudget() {
         budgetError.innerHTML = "You have to input digits";
     }
 }
-var images = ["images/image1", "images/image2", "images/image3", "images/image4" ];
+var images = ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg", "images/image4.jpg" ];
 var currentImage = 0;
 setInterval(changeImage, 3000);
 function changeImage(){
