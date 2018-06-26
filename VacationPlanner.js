@@ -64,13 +64,20 @@ function clickBudget() {
         var exchange500Msg = document.getElementById("exchange500Msg");
         var exchange500 = exchangeRate * 500;
         exchange500Msg.innerHTML = "You'll need " + exchange500 + " EUR for an item that would cost you 500 USD."
-
-
     }
     else {
         budgetError.innerHTML = "You have to input digits";
     }
 }
-
+var images = ["images/image1", "images/image2", "images/image3", "images/image4" ];
+var currentImage = 0;
+setInterval(changeImage, 3000);
+function changeImage(){
+    currentImage++;
+    if(currentImage > images.length - 1){
+        currentImage = 0;
+    }
+    document.body.style.backgroundImage = "url(" + images[currentImage] + ")";
+}
 // Main section
 init();
