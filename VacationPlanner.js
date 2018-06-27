@@ -61,9 +61,9 @@ function clickBudget() {
         var exchange10Msg = document.getElementById("exchange10Msg");
         var exchange10 = exchangeRate * 10;
         exchange10Msg.innerHTML = "You'll need " + exchange10 + " EUR for an item that would cost you 10 USD."
-        var exchange500Msg = document.getElementById("exchange500Msg");
+        var exchange500Msg = $("#exchange500Msg");
         var exchange500 = exchangeRate * 500;
-        exchange500Msg.innerHTML = "You'll need " + exchange500 + " EUR for an item that would cost you 500 USD."
+        exchange500Msg.html("You'll need " + exchange500 + " EUR for an item that would cost you 500 USD.");
     }
     else {
         budgetError.innerHTML = "You have to input digits";
